@@ -1,2 +1,13 @@
 themes/landscape
 themes/hexo-theme-vexo
+
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.idea/
+.deploy*/
+unuse/
+readme-private.md
