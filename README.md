@@ -17,4 +17,8 @@ Here is the resource that could be useful when building
 **Templates**:
 
 [aircloud](https://github.com/aircloud/hexo-theme-aircloud#标签页面--关于页面)
+
 [vexo](https://github.com/yanm1ng/hexo-theme-vexo)
+
+[matery](https://github.com/blinkfox/hexo-theme-matery)
+

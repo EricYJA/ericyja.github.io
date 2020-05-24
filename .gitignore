@@ -1,6 +1,4 @@
-themes/landscape
-themes/hexo-theme-vexo
-
+themes
 .DS_Store
 Thumbs.db
 db.json
