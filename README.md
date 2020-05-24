@@ -9,8 +9,12 @@ Here is the resource that could be useful when building
 [Guide-general-with-github.io-and-hexo](https://www.cnblogs.com/shwee/p/11421156.html)
 
 
-
 **Documents**:
 
 [Hexo](https://hexo.io/zh-cn/)
 
+
+**Templates**:
+
+[aircloud](https://github.com/aircloud/hexo-theme-aircloud#标签页面--关于页面)
+[vexo](https://github.com/yanm1ng/hexo-theme-vexo)
