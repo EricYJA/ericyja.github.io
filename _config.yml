@@ -14,7 +14,7 @@ timezone: ''
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
-root: /
+root: /mypage
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -22,14 +22,21 @@ pretty_urls:
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 # Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
+# source_dir: source
+# public_dir: public
+# tag_dir: tags
+# archive_dir: archives
+# category_dir: categories
+# code_dir: downloads/code
+# i18n_dir: :lang
+# skip_render:
+
+menu:
+ Home: /
+ Tags: /tags/
+ Archives: /archives/
+ Projects: /project/
+ About: /about/
 
 # Writing
 new_post_name: :title.md # File name of new posts

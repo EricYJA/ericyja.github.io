@@ -22,3 +22,14 @@ Here is the resource that could be useful when building
 
 [matery](https://github.com/blinkfox/hexo-theme-matery)
 
+
+**DevelopNote**
+
+Some important notice on customize theme using hexo. 
+
+The variable file, Importat to see how to use the confusing variables.
+
+[Hexo Variables](https://hexo.io/docs/variables.html)
+
+
+Also Note to make a interface file since every one is using their intuition to design their variable names. 
