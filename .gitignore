@@ -1,5 +1,6 @@
 themes/
 .DS_Store
+source/.DS_Store
 Thumbs.db
 db.json
 *.log
