@@ -62,6 +62,7 @@ deploy:
   branch: master
 
 # Personal Configuration related
+title: Eric's Dim
 author: Eric Yuan
 
 menu:
