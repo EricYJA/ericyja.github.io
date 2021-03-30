@@ -58,7 +58,7 @@ theme: hexo-theme-vexo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/EricYJA/mypage
+  repository: git@github.com:EricYJA/ericyja.github.io.git
   branch: master
 
 # Personal Configuration related

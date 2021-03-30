@@ -14,7 +14,7 @@ This is my personal git util doc for recording useful but not often used operati
 
 ##### Basic Operation
 
-- ```bash
+-  ```bash
   $ git add 
   $ git stage [-A] [-a]
   # Basically <add> and <stage> are the same, use <stage> for more accurate expression
@@ -65,7 +65,7 @@ This is my personal git util doc for recording useful but not often used operati
 
 ---
 
-##### Using public key to hook up a remote repo and a local repo
+##### Hook up Github repo
 
 1. Check the host name for local repo first
 
