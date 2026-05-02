@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import News from "../components/News.astro";
+import Publications from "../components/Publications.astro";
+import Projects from "../components/Projects.astro";
+import Internships from "../components/Internships.astro";
+import { site } from "../data/site";
+
+const introParagraphs = Array.isArray(site.profile.intro)
+  ? site.profile.intro
+  : [site.profile.intro];
+---
+
+<BaseLayout title={site.title} description={site.description}>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>{site.profile.name}</h1>
+      {
+        introParagraphs.map((paragraph) => (
+          <p class="intro">
+            {
+              Array.isArray(paragraph)
+                ? paragraph.map((part) =>
+                    typeof part === "string" ? part : <a href={part.href}>{part.label}</a>,
+                  )
+                : paragraph
+            }
+          </p>
+        ))
+      }
+      <div class="profile-links" aria-label="Profile links">
+        {site.links.map((link) => <a href={link.href}>{link.label}</a>)}
+      </div>
+    </div>
+    <div class="photo-area">
+      {
+        site.profile.photoSrc ? (
+          <img src={site.profile.photoSrc} alt={site.profile.photoAlt} loading="eager" />
+        ) : (
+          <div class="photo-placeholder" aria-label="Photo placeholder">
+            Photo
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="section two-column" aria-labelledby="research-heading">
+    <div class="section-heading">
+      <h2 id="research-heading">Research Interests</h2>
+    </div>
+    <ul class="tag-list">
+      {site.researchInterests.map((interest) => <li>{interest}</li>)}
+    </ul>
+  </section>
+
+  <News />
+  <Publications />
+  <Projects />
+  <Internships />
+</BaseLayout>

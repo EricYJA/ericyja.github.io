@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../data/site";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat("en", {
+    timeZone: "UTC",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(date);
+---
+
+<BaseLayout
+  title={`Blogs | ${site.name}`}
+  description="Blog posts and notes by Changcheng Yuan."
+>
+  <section class="page-heading">
+    <h1>Blogs</h1>
+    <p>Notes, writing, and technical posts will live here.</p>
+  </section>
+
+  <section class="section" aria-label="Blog posts">
+    {
+      posts.length > 0 ? (
+        <ol class="post-list">
+          {posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+              <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+              {post.data.description && <p>{post.data.description}</p>}
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <p class="placeholder">No blog posts yet. Future posts added under src/content/blog will appear here.</p>
+      )
+    }
+  </section>
+</BaseLayout>

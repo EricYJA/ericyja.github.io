@@ -1,0 +1,23 @@
+---
+import { internships } from "../data/internships";
+---
+
+<section class="section" aria-labelledby="internships-heading">
+  <div class="section-heading">
+    <h2 id="internships-heading">Internship</h2>
+  </div>
+  <ol class="internship-list">
+    {
+      internships.map((internship) => (
+        <li>
+          <h3>{internship.company}</h3>
+          <p class="muted">
+            {internship.role}, {internship.period}
+            {internship.location ? `, ${internship.location}` : ""}
+          </p>
+          <p>{internship.description}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

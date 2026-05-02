@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("news");
+const updates = entries
+  .flatMap((entry) => entry.data.updates)
+  .sort((a, b) => b.date.getTime() - a.date.getTime());
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat("en", {
+    month: "short",
+    year: "numeric",
+  }).format(date);
+---
+
+<section class="section" aria-labelledby="news-heading">
+  <div class="section-heading">
+    <h2 id="news-heading">News</h2>
+  </div>
+  {
+    updates.length > 0 ? (
+      <ol class="news-list">
+        {updates.map((update) => (
+          <li>
+            <time datetime={update.date.toISOString()}>{formatDate(update.date)}</time>
+            <div>
+              <h3>
+                {update.link ? <a href={update.link}>{update.title}</a> : update.title}
+              </h3>
+              <p>{update.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    ) : (
+      <p class="muted">News updates will appear here.</p>
+    )
+  }
+</section>

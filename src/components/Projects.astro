@@ -1,0 +1,23 @@
+---
+import { projects } from "../data/projects";
+---
+
+<section id="projects" class="section" aria-labelledby="projects-heading">
+  <div class="section-heading">
+    <h2 id="projects-heading">Projects</h2>
+  </div>
+  <ol class="project-list">
+    {
+      projects.map((project) => (
+        <li>
+          <div class="project-heading">
+            <h3>{project.title}</h3>
+            {project.github && <a href={project.github}>GitHub</a>}
+          </div>
+          {project.period && <p class="muted">{project.period}</p>}
+          <p>{project.description}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

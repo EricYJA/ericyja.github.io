@@ -1,0 +1,27 @@
+---
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const navItems = [
+  { label: "About me", href: "/", variant: "feature" },
+  { label: "Blogs", href: "/blog", variant: "feature" },
+];
+
+const isActive = (href: string) =>
+  href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+---
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    {
+      navItems.map((item) => (
+        <a
+          class={`nav-link nav-link-${item.variant}`}
+          href={item.href}
+          aria-current={isActive(item.href) ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

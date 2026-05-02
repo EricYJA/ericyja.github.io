@@ -1,0 +1,30 @@
+---
+import { publications } from "../data/publications";
+---
+
+<section id="publications" class="section" aria-labelledby="publications-heading">
+  <div class="section-heading">
+    <h2 id="publications-heading">Publications</h2>
+  </div>
+  <ol class="publication-list">
+    {
+      publications.map((publication) => (
+        <li>
+          <h3>{publication.title}</h3>
+          <p class="authors">{publication.authors.join(", ")}</p>
+          <p class="venue">
+            {publication.venue}, {publication.year}
+            {publication.note ? ` (${publication.note})` : ""}
+          </p>
+          {publication.links && publication.links.length > 0 && (
+            <div class="inline-links" aria-label={`Links for ${publication.title}`}>
+              {publication.links.map((link) => (
+                <a href={link.href}>{link.label}</a>
+              ))}
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</section>
