@@ -13,6 +13,21 @@ const introParagraphs = Array.isArray(site.profile.intro)
 
 <BaseLayout title={site.title} description={site.description}>
   <section class="hero">
+    <div class="photo-area">
+      {
+        site.profile.photoSrc ? (
+          <img src={site.profile.photoSrc} alt={site.profile.photoAlt} loading="eager" />
+        ) : (
+          <div class="photo-placeholder" aria-label="Photo placeholder">
+            Photo
+          </div>
+        )
+      }
+      <div class="profile-links" aria-label="Profile links">
+        {site.links.filter((link) => link.label !== "Email").map((link) => <a href={link.href}>{link.label}</a>)}
+      </div>
+      <p class="profile-email">ericycc [at] tamu [dot] edu</p>
+    </div>
     <div class="hero-copy">
       <h1>{site.profile.name}</h1>
       {
@@ -27,20 +42,6 @@ const introParagraphs = Array.isArray(site.profile.intro)
             }
           </p>
         ))
-      }
-      <div class="profile-links" aria-label="Profile links">
-        {site.links.map((link) => <a href={link.href}>{link.label}</a>)}
-      </div>
-    </div>
-    <div class="photo-area">
-      {
-        site.profile.photoSrc ? (
-          <img src={site.profile.photoSrc} alt={site.profile.photoAlt} loading="eager" />
-        ) : (
-          <div class="photo-placeholder" aria-label="Photo placeholder">
-            Photo
-          </div>
-        )
       }
     </div>
   </section>

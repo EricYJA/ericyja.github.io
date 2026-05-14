@@ -9,17 +9,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "GPU SpMM vs. GEMM Break-even",
-    period: "Aug. 2025",
-    stack: ["CUDA", "cuBLAS", "cuSPARSE"],
-    description:
-      "A performance study of sparse-dense matrix multiplication against dense GEMM baselines on GPU.",
-    highlights: [
-      "Implemented sparse-dense CUDA kernels and compared them with cuBLAS GEMM and cuSPARSE SpMM.",
-      "Characterized sparsity break-even points and explored kernel improvements for coalescing and warp-level accumulation.",
-    ],
-  },
-  {
     title: "2D Peridynamics GPU Simulator",
     period: "Jun. 2025 - Present",
     stack: ["CUDA", "MPI", "Multi-GPU"],

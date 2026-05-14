@@ -155,10 +155,10 @@ p {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(140px, 190px);
-  gap: 2.5rem;
+  grid-template-columns: minmax(140px, 190px) minmax(0, 1fr);
+  gap: 3.25rem;
   align-items: center;
-  padding: 2rem 0 3.25rem;
+  padding: 2rem 0 3.25rem 1.25rem;
   border-bottom: 1px solid var(--line);
 }
 
@@ -180,16 +180,54 @@ p {
   align-items: center;
 }
 
-.profile-links a,
+.profile-links {
+  justify-content: center;
+  gap: 0.15rem;
+  margin-top: 0.9rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.96rem;
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.profile-links a {
+  color: #30353a;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.profile-links a:hover,
+.profile-links a:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.profile-links a:not(:last-child)::after {
+  margin: 0 0.45rem;
+  color: var(--muted);
+  content: "/";
+}
+
+.profile-email {
+  margin: 0.35rem 0 0;
+  color: #30353a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .inline-links a,
 .project-heading a {
   font-weight: 650;
 }
 
 .photo-area {
-  justify-self: end;
+  justify-self: start;
   width: min(100%, 176px);
-  margin-right: 3rem;
+  margin-top: -0.6rem;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -345,13 +383,13 @@ p {
   .hero {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding-top: 1rem;
+    padding: 1rem 0 3.25rem;
   }
 
   .photo-area {
     justify-self: start;
     width: min(52vw, 160px);
-    margin-right: 0;
+    margin-top: 0;
   }
 
   .two-column,
