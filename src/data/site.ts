@@ -37,6 +37,9 @@ export const site = {
         },
         " and worked on GPU-based sparse direct solvers and graph partitioning algorithms.",
       ],
+      [
+        "Before that, I received my B.E. in Computer Science and Engineering from The Chinese University of Hong Kong, Shenzhen. There, I worked with Dr. Yeh-Ching Chung in the Supercomputing Group and participated in ISC and ASC student supercomputing competitions, where I optimized cluster setup and HPL configurations.",
+      ],
     ] satisfies IntroParagraph[],
     photoSrc: "/head_shot.png",
     photoAlt: "Portrait of Changcheng Yuan",

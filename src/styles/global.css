@@ -266,6 +266,15 @@ p {
   margin-bottom: 0.15rem;
 }
 
+.fun-fact {
+  padding-top: 1.5rem;
+  color: #30353a;
+}
+
+.fun-fact p {
+  margin: 0;
+}
+
 @media (max-width: 720px) {
   .site-footer,
   .site-main {
